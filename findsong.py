@@ -13,7 +13,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from . import *
 
 
-@ultroid_cmd(pattern="findsong$")
+@Pragyan_cmd(pattern="findsong$")
 async def _(event):
     if not event.reply_to_msg_id:
         return await event.eor("Reply to an audio message.")

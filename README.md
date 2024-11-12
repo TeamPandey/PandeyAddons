@@ -1,4 +1,4 @@
-# <p align="center"><a href="https://github.com/Teamultroid/UltroidAddons"><img src="https://github-readme-stats.vercel.app/api/pin?username=TeamUltroid&show_icons=true&theme=dracula&hide_border=true&repo=UltroidAddons"></a></p>
+# <p align="center"><a href="https://github.com/TeamPragyan/UltroidAddons"><img src="https://github-readme-stats.vercel.app/api/pin?username=TeamUltroid&show_icons=true&theme=dracula&hide_border=true&repo=UltroidAddons"></a></p>
 <p align="center">
 
 # UltroidAddons
@@ -24,7 +24,7 @@ Kindly do not **steal** others works without credits.<br>
 
 <kbd>This Example Works Everywhere. (e.g. Groups, Personal Chats ...)</kbd>
 ```python
-@ultroid_cmd(pattern="hoi")
+@Pragyan_cmd(pattern="hoi")
 async def hello_world_example(event):
     # As telethon is an asyncio based lib, you will have to use `async`/`await` Syntax.
     await event.reply("Hello **World**.")
@@ -32,7 +32,7 @@ async def hello_world_example(event):
 
 <kbd>This Example Works Only In Groups.</kbd>
 ```python
-@ultroid_cmd(pattern="hoi", groups_only=True,)
+@Pragyan_cmd(pattern="hoi", groups_only=True,)
 async def hello_world_example(event):
     await event.reply("Hello **World**.")
 ```

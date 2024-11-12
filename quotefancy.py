@@ -20,7 +20,7 @@ from quotefancy import get_quote
 from . import *
 
 
-@ultroid_cmd(pattern="qfancy$")
+@Pragyan_cmd(pattern="qfancy$")
 async def quotefancy(e):
     mes = await e.eor(get_string("com_1"))
     img = get_quote("img", download=True)

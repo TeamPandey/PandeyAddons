@@ -18,10 +18,10 @@ import random
 
 from bs4 import BeautifulSoup as bs
 
-from . import LOGS, ultroid_cmd, download_file, async_searcher, get_string
+from . import LOGS, Pragyan_cmd, download_file, async_searcher, get_string
 
 
-@ultroid_cmd(pattern="icon ?(.*)")
+@Pragyan_cmd(pattern="icon ?(.*)")
 async def www(e):
     a = e.pattern_match.group(1)
     if not a:

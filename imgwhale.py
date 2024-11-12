@@ -19,7 +19,7 @@ from os import remove
 from . import *
 
 
-@ultroid_cmd(pattern="imgwhale")
+@Pragyan_cmd(pattern="imgwhale")
 async def imgwhale(event):
     msg = await event.eor(get_string("com_1"))
     reply = await event.get_reply_message()

@@ -228,7 +228,7 @@ PAT_TEMPLATES = (
 
 async def mention_user(user_id):
     # Fetch the entity (user) based on the provided user_id
-    entity = await ultroid_bot.get_entity(user_id)
+    entity = await Pragyan_bot.get_entity(user_id)
 
     # Get the display name and escape it for HTML
     mention = get_display_name(entity)
@@ -241,7 +241,7 @@ async def mention_user(user_id):
     return permalink
 
 
-@ultroid_cmd(pattern=r"slap(.*)")
+@Pragyan_cmd(pattern=r"slap(.*)")
 async def slap(event):
     reply_message = await event.get_reply_message()
     # Extract the arguments from the pattern
@@ -254,16 +254,16 @@ async def slap(event):
     ):  # Check if 'to_id' attribute is present and is a user ID
         curr_user_id = event.message.to_id.user_id
     else:
-        curr_user_id = (await ultroid_bot.get_me()).id
+        curr_user_id = (await Pragyan_bot.get_me()).id
 
     # Await the extract_user function call
     user_id = await extract_user(event.message, args)
 
     if user_id:
-        user1 = await mention_user((await ultroid_bot.get_me()).id)
+        user1 = await mention_user((await Pragyan_bot.get_me()).id)
         user2 = await mention_user(user_id)
     else:
-        user1 = await mention_user((await ultroid_bot.get_me()).id)
+        user1 = await mention_user((await Pragyan_bot.get_me()).id)
         user2 = await mention_user(curr_user_id)
 
     temp = random.choice(SLAP_TEMPLATES)
@@ -276,7 +276,7 @@ async def slap(event):
     await event.message.edit(reply, parse_mode="html")
 
 
-@ultroid_cmd(pattern=r"hug(.*)")
+@Pragyan_cmd(pattern=r"hug(.*)")
 async def hug(event):
     reply_message = await event.get_reply_message()
     # Extract the arguments from the pattern
@@ -289,16 +289,16 @@ async def hug(event):
     ):  # Check if 'to_id' attribute is present and is a user ID
         curr_user_id = event.message.to_id.user_id
     else:
-        curr_user_id = (await ultroid_bot.get_me()).id
+        curr_user_id = (await Pragyan_bot.get_me()).id
 
     # Await the extract_user function call
     user_id = await extract_user(event.message, args)
 
     if user_id:
-        user1 = await mention_user((await ultroid_bot.get_me()).id)
+        user1 = await mention_user((await Pragyan_bot.get_me()).id)
         user2 = await mention_user(user_id)
     else:
-        user1 = await mention_user((await ultroid_bot.get_me()).id)
+        user1 = await mention_user((await Pragyan_bot.get_me()).id)
         user2 = await mention_user(curr_user_id)
 
     temp = random.choice(HUG_TEMPLATES)
@@ -309,7 +309,7 @@ async def hug(event):
     await event.message.edit(reply, parse_mode="html")
 
 
-@ultroid_cmd(pattern=r"pat(.*)")
+@Pragyan_cmd(pattern=r"pat(.*)")
 async def pat(event):
     reply_message = await event.get_reply_message()
     # Extract the arguments from the pattern
@@ -322,16 +322,16 @@ async def pat(event):
     ):  # Check if 'to_id' attribute is present and is a user ID
         curr_user_id = event.message.to_id.user_id
     else:
-        curr_user_id = (await ultroid_bot.get_me()).id
+        curr_user_id = (await Pragyan_bot.get_me()).id
 
     # Await the extract_user function call
     user_id = await extract_user(event.message, args)
 
     if user_id:
-        user1 = await mention_user((await ultroid_bot.get_me()).id)
+        user1 = await mention_user((await Pragyan_bot.get_me()).id)
         user2 = await mention_user(user_id)
     else:
-        user1 = await mention_user((await ultroid_bot.get_me()).id)
+        user1 = await mention_user((await Pragyan_bot.get_me()).id)
         user2 = await mention_user(curr_user_id)
 
     temp = random.choice(PAT_TEMPLATES)

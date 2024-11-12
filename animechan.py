@@ -8,10 +8,10 @@ Fetch Random anime quotes
 Command : `{i}aniquote`
 """
 
-from . import ultroid_cmd, async_searcher
+from . import Pragyan_cmd, async_searcher
 
 
-@ultroid_cmd(pattern="aniquote")
+@Pragyan_cmd(pattern="aniquote")
 async def _(ult):
     u = await ult.eor("...")
     try:

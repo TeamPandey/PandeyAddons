@@ -349,7 +349,7 @@ rusifont = [
 ]
 
 
-@ultroid_cmd(pattern="weeb ?(.*)")
+@Pragyan_cmd(pattern="weeb ?(.*)")
 async def weebify(ult):
     args = ult.pattern_match.group(1)
     if not args and ult.is_reply:
@@ -366,7 +366,7 @@ async def weebify(ult):
     await ult.eor(string)
 
 
-@ultroid_cmd(pattern="tantext ?(.*)")
+@Pragyan_cmd(pattern="tantext ?(.*)")
 async def tantxt(ult):
     args = ult.pattern_match.group(1)
     if not args and ult.is_reply:
@@ -383,7 +383,7 @@ async def tantxt(ult):
     await ult.eor(string)
 
 
-@ultroid_cmd(pattern="linetext ?(.*)")
+@Pragyan_cmd(pattern="linetext ?(.*)")
 async def linetxt(ult):
     args = ult.pattern_match.group(1)
     if not args and ult.is_reply:
@@ -400,7 +400,7 @@ async def linetxt(ult):
     await ult.edit(string)
 
 
-@ultroid_cmd(pattern="boxtext ?(.*)")
+@Pragyan_cmd(pattern="boxtext ?(.*)")
 async def boxtxt(ult):
     args = ult.pattern_match.group(1)
     if not args and ult.is_reply:
@@ -416,7 +416,7 @@ async def boxtxt(ult):
     await ult.eor(string)
 
 
-@ultroid_cmd(pattern="bubbletext ?(.*)")
+@Pragyan_cmd(pattern="bubbletext ?(.*)")
 async def bubbletxt(ult):
     args = ult.pattern_match.group(1)
     if not args and ult.is_reply:
@@ -432,7 +432,7 @@ async def bubbletxt(ult):
     await ult.eor(string)
 
 
-@ultroid_cmd(pattern="cursive ?(.*)")
+@Pragyan_cmd(pattern="cursive ?(.*)")
 async def cursive(ult):
     args = ult.pattern_match.group(1)
     if not args and ult.is_reply:
@@ -450,7 +450,7 @@ async def cursive(ult):
     await ult.eor(string)
 
 
-@ultroid_cmd(pattern="greekify ?(.*)")
+@Pragyan_cmd(pattern="greekify ?(.*)")
 async def greektext(ult):
     args = ult.pattern_match.group(1)
     if not args and ult.is_reply:
@@ -466,7 +466,7 @@ async def greektext(ult):
     await ult.eor(string)
 
 
-@ultroid_cmd(pattern="sorcify ?(.*)")
+@Pragyan_cmd(pattern="sorcify ?(.*)")
 async def sorcerertext(ult):
 
     args = ult.pattern_match.group(1)
@@ -484,7 +484,7 @@ async def sorcerertext(ult):
     await ult.eor(string)
 
 
-@ultroid_cmd(pattern="fraktify ?(.*)")
+@Pragyan_cmd(pattern="fraktify ?(.*)")
 async def frakturtext(ult):
     args = ult.pattern_match.group(1)
     if not args and ult.is_reply:
@@ -501,7 +501,7 @@ async def frakturtext(ult):
     await ult.eor(string)
 
 
-@ultroid_cmd(pattern="rusify ?(.*)")
+@Pragyan_cmd(pattern="rusify ?(.*)")
 async def rusitext(ult):
     args = ult.pattern_match.group(1)
     if not args and ult.is_reply:

@@ -24,7 +24,7 @@ def remove_emoji(string):
     return emoji.get_emoji_regexp().sub("", string)
 
 
-@ultroid_cmd(pattern="t2g ?(.*)")
+@Pragyan_cmd(pattern="t2g ?(.*)")
 async def t2g(e):
     eris = await e.eor("`...`")
     input_args = e.pattern_match.group(1)
@@ -51,7 +51,7 @@ async def t2g(e):
 
 async def cleargif(gif_):
     try:
-        await ultroid(
+        await Pragyan(
             functions.messages.SaveGifRequest(
                 id=get_input_document(gif_),
                 unsave=True,

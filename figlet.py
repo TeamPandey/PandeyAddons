@@ -7,7 +7,7 @@
 
 import pyfiglet
 
-from . import ultroid_cmd, split_list
+from . import Pragyan_cmd, split_list
 
 CMD_SET = {
     "slant": "slant",
@@ -464,7 +464,7 @@ Split = split_list(DataList, 42)
 offset = 0
 
 
-@ultroid_cmd(pattern="figlet( ?(.*)|$)")
+@Pragyan_cmd(pattern="figlet( ?(.*)|$)")
 async def figlet(event):
     input_str = event.pattern_match.group(1).strip()
     if not input_str:

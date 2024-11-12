@@ -14,10 +14,10 @@
    Decode the given text from Morse Code.
 """
 
-from . import async_searcher, ultroid_cmd
+from . import async_searcher, Pragyan_cmd
 
 
-@ultroid_cmd(pattern="mencode ?(.*)")
+@Pragyan_cmd(pattern="mencode ?(.*)")
 async def mencode(event):
     msg = await event.eor(get_string("com_1"))
     text = event.pattern_match.group(1)
@@ -28,7 +28,7 @@ async def mencode(event):
     await msg.edit("**Encoded.**\n\n**Morse Code:** `{}`".format(encoded))
 
 
-@ultroid_cmd(pattern="mdecode ?(.*)")
+@Pragyan_cmd(pattern="mdecode ?(.*)")
 async def mencode(event):
     msg = await event.eor(get_string("com_1"))
     text = event.pattern_match.group(1)

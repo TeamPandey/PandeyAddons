@@ -16,7 +16,7 @@
 import asyncio
 
 
-@ultroid_cmd(pattern="kill$")
+@Pragyan_cmd(pattern="kill$")
 async def _(event):
     animation_interval = 0.7
     animation_ttl = range(0, 12)
@@ -41,6 +41,6 @@ async def _(event):
         await a.edit(animation_chars[i % 12])
 
 
-@ultroid_cmd(pattern="fp$")
+@Pragyan_cmd(pattern="fp$")
 async def a(e):
     await e.eor("🤦‍♂")

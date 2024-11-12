@@ -13,10 +13,10 @@
 
 from bs4 import BeautifulSoup as bs
 
-from . import ultroid_cmd, async_searcher
+from . import Pragyan_cmd, async_searcher
 
 
-@ultroid_cmd(pattern="apod$")
+@Pragyan_cmd(pattern="apod$")
 async def aposj(e):
     link = "https://apod.nasa.gov/apod/"
     C = await async_searcher(link)

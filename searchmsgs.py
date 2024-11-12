@@ -17,7 +17,7 @@
 """
 
 
-@ultroid_cmd(pattern="search( -r|) ?(.*)")
+@Pragyan_cmd(pattern="search( -r|) ?(.*)")
 async def searcher(e):
     eris = await e.eor("`Working..`")
     args = e.pattern_match.group(2)

@@ -31,7 +31,7 @@ import random
 import requests
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
 
-from . import ultroid_bot, ultroid_cmd
+from . import Pragyan_bot, Pragyan_cmd
 
 class WaifuApiUrl:
     def __init__(
@@ -50,7 +50,7 @@ class WaifuApiUrl:
         api_url = f"{self.allow_web}://{self.url}/{self.method}/{self.parameter}"
         return api_url
 
-@ultroid_cmd(
+@Pragyan_cmd(
     pattern=r"waifu(|2)(?:\s|$)([\s\S]*)",
 )
 async def _(event):

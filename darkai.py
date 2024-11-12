@@ -15,7 +15,7 @@
 import json
 import requests
 from collections import deque
-from . import ultroid_cmd, LOGS, run_async
+from . import Pragyan_cmd, LOGS, run_async
 import base64
 
 darkai_chat_history_SIZE = 80
@@ -65,7 +65,7 @@ async def fetch_chat_response(prompt, model):
         LOGS.warning("Error: %d - %s", response.status_code, response.text)
         return None
 
-@ultroid_cmd(pattern="darkai (.+)")
+@Pragyan_cmd(pattern="darkai (.+)")
 async def darkai_chat(e):
     """Command to interact with the DarkAI API using the 'darkai' keyword with chat history."""
     user_input = e.pattern_match.group(1)

@@ -17,13 +17,13 @@
 """
 
 
-from . import ultroid_cmd, async_searcher
+from . import Pragyan_cmd, async_searcher
 
 
 API = {"g": "lmgtfy.com/?q={}%26iie=1", "d": "lmddgtfy.net/?q={}"}
 
 
-@ultroid_cmd(pattern="ht(g|d)( ?(.*)|$)")
+@Pragyan_cmd(pattern="ht(g|d)( ?(.*)|$)")
 async def _(e):
     key = e.pattern_match.group(1)
     text = e.pattern_match.group(2)

@@ -25,18 +25,18 @@ from telethon.tl.types import MessageEntityMentionName
 from . import *
 
 
-@ultroid_cmd(pattern="clone ?(.*)", fullsudo=True)
+@Pragyan_cmd(pattern="clone ?(.*)", fullsudo=True)
 async def _(event):
     eve = await event.eor("Processing...")
     reply_message = await event.get_reply_message()
-    whoiam = await event.client(GetFullUserRequest(ultroid_bot.uid))
+    whoiam = await event.client(GetFullUserRequest(Pragyan_bot.uid))
     if whoiam.full_user.about:
-        mybio = f"{str(ultroid_bot.me.id)}01"
+        mybio = f"{str(Pragyan_bot.me.id)}01"
         # saving bio for revert
         udB.set_key(f"{mybio}", whoiam.full_user.about)
-    udB.set_key(f"{ultroid_bot.uid}02", whoiam.users[0].first_name)
+    udB.set_key(f"{Pragyan_bot.uid}02", whoiam.users[0].first_name)
     if whoiam.users[0].last_name:
-        udB.set_key(f"{ultroid_bot.uid}03", whoiam.users[0].last_name)
+        udB.set_key(f"{Pragyan_bot.uid}03", whoiam.users[0].last_name)
     replied_user, error_i_a = await get_full_user(event)
     if replied_user is None:
         await eve.edit(str(error_i_a))
@@ -66,13 +66,13 @@ async def _(event):
     )
 
 
-@ultroid_cmd(pattern="revert$")
+@Pragyan_cmd(pattern="revert$")
 async def _(event):
     name = OWNER_NAME
-    mybio = f"{str(ultroid_bot.me.id)}01"
+    mybio = f"{str(Pragyan_bot.me.id)}01"
     bio = chc if (chc := udB.get_key(mybio)) else "Error : Bio Lost"
-    fname = udB.get_key(f"{ultroid_bot.uid}02")
-    lname = udB.get_key(f"{ultroid_bot.uid}03")
+    fname = udB.get_key(f"{Pragyan_bot.uid}02")
+    lname = udB.get_key(f"{Pragyan_bot.uid}03")
     if fname:
         name = fname
     ok = lname if lname else ""
@@ -85,9 +85,9 @@ async def _(event):
     await client(UpdateProfileRequest(first_name=name))
     await client(UpdateProfileRequest(last_name=ok))
     await event.eor("Succesfully reverted to your account back !")
-    udB.del_key(f"{ultroid_bot.uid}01")
-    udB.del_key(f"{ultroid_bot.uid}02")
-    udB.del_key(f"{ultroid_bot.uid}03")
+    udB.del_key(f"{Pragyan_bot.uid}01")
+    udB.del_key(f"{Pragyan_bot.uid}02")
+    udB.del_key(f"{Pragyan_bot.uid}03")
 
 
 async def get_full_user(event):

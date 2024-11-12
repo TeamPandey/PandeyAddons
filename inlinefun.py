@@ -4,7 +4,7 @@
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
-# .tweet made for ultroid
+# .tweet made for Pragyan
 
 # .uta ported from Dark-Cobra
 
@@ -33,7 +33,7 @@
 from random import choice
 
 
-from . import ultroid_cmd, get_string
+from . import Pragyan_cmd, get_string
 import asyncio
 import re
 
@@ -58,7 +58,7 @@ def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return re.sub(EMOJI_PATTERN, "", inputString)
 
-@ultroid_cmd(pattern="tweet ?(.*)")
+@Pragyan_cmd(pattern="tweet ?(.*)")
 async def tweet(e):
     wai = await e.eor()
     text = e.pattern_match.group(1)
@@ -72,7 +72,7 @@ async def tweet(e):
         await e.eor(str(m))
 
 
-@ultroid_cmd(pattern="stic ?(.*)")
+@Pragyan_cmd(pattern="stic ?(.*)")
 async def tweet(e):
     if len(e.text) > 5 and e.text[5] != " ":
         return
@@ -86,7 +86,7 @@ async def tweet(e):
     await wai.delete()
 
 
-@ultroid_cmd(pattern="gglax ?(.*)")
+@Pragyan_cmd(pattern="gglax ?(.*)")
 async def gglax_sticker(e):
     wai = await e.eor(get_string("com_1"))
     text = e.pattern_match.group(1)
@@ -100,7 +100,7 @@ async def gglax_sticker(e):
         await e.eor(str(m))
 
 
-@ultroid_cmd(pattern="frog ?(.*)")
+@Pragyan_cmd(pattern="frog ?(.*)")
 async def honkasays(e):
     wai = await e.eor(get_string("com_1"))
     text = e.pattern_match.group(1)
@@ -123,7 +123,7 @@ async def honkasays(e):
         await wai.edit(str(er))
 
 
-@ultroid_cmd(pattern="uta ?(.*)")
+@Pragyan_cmd(pattern="uta ?(.*)")
 async def nope(doit):
     ok = doit.pattern_match.group(1)
     replied = await doit.get_reply_message()
@@ -141,7 +141,7 @@ async def nope(doit):
     await a.delete()
 
 
-@ultroid_cmd(pattern="quot ?(.*)")
+@Pragyan_cmd(pattern="quot ?(.*)")
 async def quote_(event):
     IFUZI = event.pattern_match.group(1)
     if "quotly" in event.text:

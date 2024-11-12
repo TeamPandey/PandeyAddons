@@ -40,7 +40,7 @@ perth_tz = pytz.timezone("Asia/Kolkata")
 
 
 async def mention_user(user_id):
-    entity = await ultroid_bot.get_entity(user_id)
+    entity = await Pragyan_bot.get_entity(user_id)
     mention = get_display_name(entity)
     escaped_mention = html.escape(mention)
     permalink = f"<a href='tg://user?id={entity.id}'>{escaped_mention}</a>"
@@ -107,7 +107,7 @@ async def get_group_members_last_online(event):
     return result
 
 
-@ultroid_cmd(pattern="lastonline$", manager=True)
+@Pragyan_cmd(pattern="lastonline$", manager=True)
 async def _(event):
     xx = await event.eor(
         "Fetching last online times for group members...", parse_mode="html"
@@ -294,7 +294,7 @@ async def last_online_info(event, user_id):
         return f"<b>User: {mention_text} (<code>{user.id}</code>)</b> is a bot and their status is not tracked."
 
 
-@ultroid_cmd(pattern="seen(?: |$)(.*)", manager=True)
+@Pragyan_cmd(pattern="seen(?: |$)(.*)", manager=True)
 async def _(event):
     input_str = event.pattern_match.group(1)
     xx = await event.eor("Fetching last online time...", parse_mode="html")

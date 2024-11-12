@@ -23,7 +23,7 @@ from . import *
 link = "https://fungenerators.com/random/truth-or-dare?option="
 
 
-@ultroid_cmd(pattern="truth$")
+@Pragyan_cmd(pattern="truth$")
 async def gtruth(ult):
     m = await ult.eor("`Generating a Truth Statement.. `")
     nl = link + "truth"
@@ -33,7 +33,7 @@ async def gtruth(ult):
     await m.edit(f"**#TruthTask**\n\n`{cm}`")
 
 
-@ultroid_cmd(pattern="dare$")
+@Pragyan_cmd(pattern="dare$")
 async def gtruth(ult):
     m = await ult.eor("`Generating a Dare Task.. `")
     nl = link + "dare"

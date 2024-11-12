@@ -19,7 +19,7 @@ The bot will try to auto reply first to the messages by @FastlyWriteBot
 
 from telegraph import upload_file
 from telethon import events
-from . import udB, LOGS, ultroid_bot, ultroid_cmd, async_searcher
+from . import udB, LOGS, Pragyan_bot, Pragyan_cmd, async_searcher
 from os import remove
 
 base_url = "https://api.ocr.space/parse/imageurl?apikey={api}&url={tgraph}"
@@ -60,7 +60,7 @@ async def fastly_bot(event):
         LOGS.exception(e)
 
 
-@ultroid_cmd(pattern="fastly$")
+@Pragyan_cmd(pattern="fastly$")
 async def fastOnOff(event):
     xx = await event.eor("`...`")
     get_ = udB.get_key("FASTLY")
@@ -68,7 +68,7 @@ async def fastOnOff(event):
         if not udB.get_key("OCR_API"):
             return await xx.edit("`OCR_API` is missing.\nAdd it before using this..")
         udB.set_key("FASTLY", True)
-        ultroid_bot.add_handler(
+        Pragyan_bot.add_handler(
             fastly_bot,
             events.NewMessage(incoming=True, from_users=BotList),
         )
@@ -78,7 +78,7 @@ async def fastOnOff(event):
 
 
 if udB.get_key("FASTLY"):
-    ultroid_bot.add_handler(
+    Pragyan_bot.add_handler(
         fastly_bot,
         events.NewMessage(incoming=True, from_users=BotList),
     )

@@ -11,10 +11,10 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from . import ultroid_cmd
+from . import Pragyan_cmd
 
 
-@ultroid_cmd(pattern="limited$")
+@Pragyan_cmd(pattern="limited$")
 async def demn(ult):
     chat = "@SpamBot"
     msg = await ult.eor("Checking If You Are Limited...")

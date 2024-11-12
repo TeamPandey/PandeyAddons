@@ -30,7 +30,7 @@ from telethon.tl.functions.account import UpdateProfileRequest
 from . import *
 
 
-@ultroid_cmd(pattern="(auto|stop)name$")
+@Pragyan_cmd(pattern="(auto|stop)name$")
 async def autoname_(event):
     match = event.pattern_match.group(1)
     if match == "stop":
@@ -50,7 +50,7 @@ async def autoname_(event):
         await asyncio.sleep(1111)
 
 
-@ultroid_cmd(pattern="(auto|stop)bio$")
+@Pragyan_cmd(pattern="(auto|stop)bio$")
 async def autoname_(event):
     match = event.pattern_match.group(1)
     if match == "stop":

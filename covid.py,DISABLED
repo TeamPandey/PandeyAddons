@@ -14,10 +14,10 @@
 
 from covid import Covid
 
-from . import ultroid_cmd
+from . import Pragyan_cmd
 
 
-@ultroid_cmd(pattern="covid")
+@Pragyan_cmd(pattern="covid")
 async def coronish(event):
     covid = Covid()
     okie = event.text.split(maxsplit=1)

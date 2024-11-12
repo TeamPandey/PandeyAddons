@@ -22,7 +22,7 @@
 
 from bs4 import BeautifulSoup as bs
 
-from . import HNDLR, async_searcher, ultroid_cmd
+from . import HNDLR, async_searcher, Pragyan_cmd
 
 # These Api's are Collected From
 # ---- https://github.com/public-apis/public-apis
@@ -44,7 +44,7 @@ API_LIST = {
 SCRAP_LIST = {"celebrity": "https://www.randomcelebritygenerator.com/"}
 
 
-@ultroid_cmd(pattern="random ?(.*)")
+@Pragyan_cmd(pattern="random ?(.*)")
 async def random_magic(event):
     if "randomuser" in event.text:
         return

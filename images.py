@@ -23,7 +23,7 @@ from telethon.errors.rpcerrorlist import WebpageCurlFailedError, MediaInvalidErr
 from . import *
 
 
-@ultroid_cmd(pattern="freepik ?(.*)")
+@Pragyan_cmd(pattern="freepik ?(.*)")
 async def fnew_pik(event):
     match = event.pattern_match.group(1)
     limit = 5

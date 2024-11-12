@@ -11,7 +11,7 @@ Search movie details from IMDB
 from . import *
 
 
-@ultroid_cmd(pattern="imdb ?(.*)")
+@Pragyan_cmd(pattern="imdb ?(.*)")
 async def imdb(e):
     m = await e.eor("`...`")
     movie_name = e.pattern_match.group(1)

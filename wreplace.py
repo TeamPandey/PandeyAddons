@@ -17,7 +17,7 @@ import asyncio
 from . import *
 
 
-@ultroid_cmd(pattern="wreplace")
+@Pragyan_cmd(pattern="wreplace")
 async def harpia(e):
     try:
         sed = str(e.text[10:])

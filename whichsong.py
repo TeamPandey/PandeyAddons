@@ -15,12 +15,12 @@ from os import remove
 
 from shazamio import Shazam
 
-from . import eor, get_string, mediainfo, ultroid_cmd
+from . import eor, get_string, mediainfo, Pragyan_cmd
 
 shazam = Shazam()
 
 
-@ultroid_cmd(pattern="whichsong$")
+@Pragyan_cmd(pattern="whichsong$")
 async def song_recog(event):
     reply = await event.get_reply_message()
     if not (reply and mediainfo(reply.media) == "audio"):
