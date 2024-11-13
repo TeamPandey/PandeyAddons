@@ -19,15 +19,15 @@ The bot will try to auto reply first to the messages by @FastlyWriteBot
 
 from telegraph import upload_file
 from telethon import events
-from . import udB, LOGS, Pragyan_bot, Pragyan_cmd, async_searcher
+from . import pdB, LOGS, Pragyan_bot, Pragyan_cmd, async_searcher
 from os import remove
 
 base_url = "https://api.ocr.space/parse/imageurl?apikey={api}&url={tgraph}"
 
 BotList = [1806208310]
 
-if udB.get_key("FASTLY_CLONES"):
-    for i in udB.get_key("FASTLY_CLONES").split():
+if pdB.get_key("FASTLY_CLONES"):
+    for i in pdB.get_key("FASTLY_CLONES").split():
         try:
             BotList.append(int(i))
         except TypeError:
@@ -35,9 +35,9 @@ if udB.get_key("FASTLY_CLONES"):
 
 
 async def fastly_bot(event):
-    if not udB.get_key("FASTLY"):
+    if not pdB.get_key("FASTLY"):
         return
-    api = udB.get_key("OCR_API")
+    api = pdB.get_key("OCR_API")
     if not (api and event.photo):
         return
     med = await event.download_media()
@@ -63,21 +63,21 @@ async def fastly_bot(event):
 @Pragyan_cmd(pattern="fastly$")
 async def fastOnOff(event):
     xx = await event.eor("`...`")
-    get_ = udB.get_key("FASTLY")
+    get_ = pdB.get_key("FASTLY")
     if not get_:
-        if not udB.get_key("OCR_API"):
+        if not pdB.get_key("OCR_API"):
             return await xx.edit("`OCR_API` is missing.\nAdd it before using this..")
-        udB.set_key("FASTLY", True)
+        pdB.set_key("FASTLY", True)
         Pragyan_bot.add_handler(
             fastly_bot,
             events.NewMessage(incoming=True, from_users=BotList),
         )
         return await xx.edit("`Auto Fastly Response Activated`")
-    udB.del_key("FASTLY")
+    pdB.del_key("FASTLY")
     await xx.edit("`Fastly Stopped!`")
 
 
-if udB.get_key("FASTLY"):
+if pdB.get_key("FASTLY"):
     Pragyan_bot.add_handler(
         fastly_bot,
         events.NewMessage(incoming=True, from_users=BotList),
