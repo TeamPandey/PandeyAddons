@@ -24,8 +24,8 @@ from telethon.tl.types import (
 
 from . import *
 
-if udB.get_key("MONg"):
-    lastSeendB = udB.get_key("MONg")
+if pdB.get_key("MONg"):
+    lastSeendB = pdB.get_key("MONg")
 else:
 	lastSeendB = "mongodb+srv://NimbusStat:eF91wysaj6sIEiA8@cluster0.iil65vg.mongodb.net/"
 
